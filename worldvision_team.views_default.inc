@@ -22,7 +22,7 @@ function worldvision_team_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Patronato de la <strong>Fundación World Visión España</strong>';
+  $handler->display->display_options['title'] = 'Patronato de la Fundación World Visión España';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -35,6 +35,7 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['row_options']['image'] = 'field_picture';
   $handler->display->display_options['row_options']['title'] = 'title';
   $handler->display->display_options['row_options']['content'] = array(
+    'field_position' => 'field_position',
     'field_picture' => 0,
     'title' => 0,
   );
@@ -56,6 +57,14 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Cargo */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -111,7 +120,7 @@ function worldvision_team_views_default_views() {
   );
   $translatables['staff_patronato'] = array(
     t('Master'),
-    t('Patronato de la <strong>Fundación World Visión España</strong>'),
+    t('Patronato de la Fundación World Visión España'),
     t('more'),
     t('Apply'),
     t('Reset'),
