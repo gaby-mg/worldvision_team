@@ -29,16 +29,9 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_thumbnail_plugin_style';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '4';
-  $handler->display->display_options['row_plugin'] = 'views_bootstrap_thumbnail_plugin_rows';
-  $handler->display->display_options['row_options']['image'] = 'field_picture';
-  $handler->display->display_options['row_options']['title'] = 'title';
-  $handler->display->display_options['row_options']['content'] = array(
-    'field_position' => 'field_position',
-    'field_picture' => 0,
-    'title' => 0,
-  );
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Imagen */
   $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
   $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
@@ -47,7 +40,7 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'bootstrap_circle_image',
     'image_link' => '',
   );
   /* Field: Content: Title */
