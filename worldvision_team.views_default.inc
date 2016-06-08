@@ -40,7 +40,7 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'bootstrap_circle_image',
+    'image_style' => 'bootstrap_circle_image_black_white',
     'image_link' => '',
   );
   /* Field: Content: Title */
