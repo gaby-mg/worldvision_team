@@ -17,7 +17,7 @@ function worldvision_team_views_api($module = NULL, $api = NULL) {
 function worldvision_team_node_info() {
   $items = array(
     'staff' => array(
-      'name' => t('Miembro del equipo'),
+      'name' => t('Staff Member'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
