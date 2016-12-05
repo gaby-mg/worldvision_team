@@ -218,12 +218,14 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['filters']['field_staff_type_value']['expose']['operator_id'] = 'field_staff_type_value_op';
   $handler->display->display_options['filters']['field_staff_type_value']['expose']['operator'] = 'field_staff_type_value_op';
   $handler->display->display_options['filters']['field_staff_type_value']['expose']['identifier'] = 'field_staff_type_value';
-  $handler->display->display_options['filters']['field_staff_type_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_staff_type_value']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['field_staff_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_staff_type_value']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_staff_type_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['path'] = 'equipo';
 
   /* Display: Block */
