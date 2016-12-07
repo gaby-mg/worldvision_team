@@ -79,6 +79,8 @@ function worldvision_team_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Conoce nuestro equipo';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -123,7 +125,7 @@ function worldvision_team_views_default_views() {
           'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
-          'filter_rewrite_values' => '',
+          'filter_rewrite_values' => 'Patronato de la Fundación World Visión España|Patronato',
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
@@ -227,41 +229,6 @@ function worldvision_team_views_default_views() {
   $handler->display->display_options['filters']['field_staff_type_value']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_staff_type_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['path'] = 'equipo';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Equipo de trabajo';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'staff' => 'staff',
-  );
-  /* Filter criterion: Content: Tipo (field_staff_type) */
-  $handler->display->display_options['filters']['field_staff_type_value']['id'] = 'field_staff_type_value';
-  $handler->display->display_options['filters']['field_staff_type_value']['table'] = 'field_data_field_staff_type';
-  $handler->display->display_options['filters']['field_staff_type_value']['field'] = 'field_staff_type_value';
-  $handler->display->display_options['filters']['field_staff_type_value']['value'] = array(
-    'staff' => 'staff',
-  );
   $translatables['staff_patronato'] = array(
     t('Master'),
     t('Patronato de la Fundación World Visión España'),
@@ -274,9 +241,9 @@ function worldvision_team_views_default_views() {
     t('Select any filter and click on Apply to see results'),
     t('Tipo'),
     t('Page'),
+    t('Conoce nuestro equipo'),
     t('Advanced options'),
-    t('Block'),
-    t('Equipo de trabajo'),
+    t('Patronato de la Fundación World Visión España|Patronato'),
   );
   $export['staff_patronato'] = $view;
 
